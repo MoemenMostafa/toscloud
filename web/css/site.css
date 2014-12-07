@@ -129,6 +129,70 @@ a.desc:after {
 	margin: 7px;
 }
 
+.discreption{
+    margin-left: 5px;
+    color: gray;
+    margin-bottom: 20px;
+}
+
+.tos-paragraph{
+    padding: 10px 5px;
+    background: rgb(249, 249, 249);
+    position: relative;
+}
+
+.red{
+    background: rgb(255, 203, 203) !important;
+}
+
+.green{
+    background: rgb(224, 254, 201) !important;
+}
+
+.tos-paragraph:hover {
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 5px;
+    padding: 9px 4px;
+    cursor: pointer;
+}
+
+.tos-paragraph-actions {
+    position: absolute;
+    right: 8px;
+    bottom: 5px;
+    display: none;
+}
+
+.tos-paragraph-actions div {
+    padding: 0 4px;
+}
+
+.tos-paragraph-actions:hover {
+    opacity: 0.8 !important;
+}
+
+.tos-paragraph:hover .tos-paragraph-actions{
+    display:block;
+    opacity: 0.4;
+    background: rgb(228, 228, 228);
+    padding: 2px 5px;
+    border-radius: 10px;
+}
+.thumbUp, .thumbDown{
+    width:20px;
+    height:24px;
+    float: left;
+    background-size: cover;
+}
+.thumbUp{
+    background-image: URL('../ThumsUP-24px.png');
+}
+
+.thumbDown{
+    background-image: URL('../ThumsDown-24px.png');
+}
+
+
 @media screen and (max-width: 480px) {
     #home-logo {
         width: 250px;

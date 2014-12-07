@@ -20,6 +20,11 @@ use Yii;
  */
 class Text extends \yii\db\ActiveRecord
 {
+    
+    
+    
+    public $content = null;
+    
     /**
      * @inheritdoc
      */
@@ -35,7 +40,10 @@ class Text extends \yii\db\ActiveRecord
     {
         return [
             [['service_id', 'type_id', 'user_id'], 'integer'],
-            [['timestamp'], 'safe']
+            [['timestamp'], 'safe'],
+            [['service_id'], 'required'],
+            [['type_id'], 'required'],
+            [['content'], 'required'],
         ];
     }
 
@@ -53,7 +61,8 @@ class Text extends \yii\db\ActiveRecord
             'timestamp' => 'Timestamp',
         ];
     }
-
+    
+    
     /**
      * @return \yii\db\ActiveQuery
      */

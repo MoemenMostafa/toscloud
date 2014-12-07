@@ -7,6 +7,7 @@ use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\Text;
+use app\models\Part;
 
 class CreateController extends \yii\web\Controller
 {
@@ -38,10 +39,33 @@ class CreateController extends \yii\web\Controller
     	$model = new Text();
     	if($model->load(Yii::$app->request->post()))
         {
-            print_r(Yii::$app->request->post());
-            #$model->save();
+            $text = Yii::$app->request->post('Text');
+            $model->user_id =  Yii::$app->user->identity->id;
+            if($model->save())
+            {
+                // Split text into parts and save to database
+                $parts = preg_split('#(\r\n?|\n)+#', $text['content']);
+                
+                $x=1;
+                $part = null;
+                foreach ($parts as $part){
+                    if (trim($part) !== ""){
+                        $modelPart = new Part();
+                        $modelPart->text_id = $model->id;
+                        $modelPart->content = $part;
+                        $modelPart->contentOrder = $x;
+                        $x++;
+                        $modelPart->save();
+                    }
+                }
+            }
             
-            #$this->redirect(['/']);
+
+            
+            
+            
+            
+            $this->redirect(['/']);
         }
         return $this->render('index', [
                 'model' => $model,

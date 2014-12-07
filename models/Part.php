@@ -9,6 +9,7 @@ use Yii;
  *
  * @property integer $id
  * @property integer $text_id
+ * @property integer $contentOrder
  * @property string $content
  * @property string $timestamp
  *
@@ -18,6 +19,9 @@ use Yii;
  */
 class Part extends \yii\db\ActiveRecord
 {
+    
+    public $cnt;
+    
     /**
      * @inheritdoc
      */
@@ -32,7 +36,7 @@ class Part extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['text_id'], 'integer'],
+            [['text_id','contentOrder'], 'integer'],
             [['content'], 'string'],
             [['timestamp'], 'safe']
         ];
@@ -47,6 +51,7 @@ class Part extends \yii\db\ActiveRecord
             'id' => 'ID',
             'text_id' => 'Text ID',
             'content' => 'Content',
+            'contentOrder' => 'Content Order',
             'timestamp' => 'Timestamp',
         ];
     }
@@ -73,5 +78,30 @@ class Part extends \yii\db\ActiveRecord
     public function getScores()
     {
         return $this->hasMany(Score::className(), ['part_id' => 'id']);
+    }
+    
+    public function getScore($id,$value)
+    {
+        return \app\models\Score::find()->select(['*'])
+                                        ->where("value = $value AND part_id=$id")
+                                        ->count();
+    }
+    
+    public function getStatus($id)
+    {
+        $up = \app\models\Score::find()->select(['*'])
+                                        ->where("value =1 AND part_id=$id")
+                                        ->count();
+        $down = \app\models\Score::find()->select(['*'])
+                                        ->where("value =0 AND part_id=$id")
+                                        ->count();
+        $result = $up - $down;
+        
+        if ($result > 0){
+            return "green";
+        }
+        if ($result < 0){
+            return "red";
+        }
     }
 }

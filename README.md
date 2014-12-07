@@ -1,20 +1,17 @@
-# Koding Global Virtual Hackathon's Submission Example
+# Welcome to your new Koding workspace
 
-This is a sample submission repository for the hackathon. If you don't know what that is, please [go here](https://koding.com/Hackathon). You can fork this repo and use this as a starting point.
+This workspace, which lives inside the 'Workspaces' folder of your
+home directory, is the place where you can store all relevant and
+related files to this project.
 
-## Description
+Workspaces help keep your projects organized. You can create any
+number of sub-folders within this workspace in order to further
+organize your work.
 
-[![Koding Hackathon](https://github.com/koding/hackathon.submit/raw/master/images/badge.png?raw=true "Koding Hackathon")](https://koding.com/Hackathon)
+As you move back and forth between your workspaces, Koding will try
+and remember everything about each workspace. This includes things
+like IDE settings, files open, Terminals open, etc.
 
-A brief introduction to your project. It should include the motivation behind the project and also how it addresses the hackthon theme you've selected.
+You can create as many new workspaces as you need on your VM.
 
-## Screenshots
-
-Here provide couple screenshots of your project. You can use a tool like https://monosnap.com/welcome or https://droplr.com to take a screenshot. Animated gifs are also welcome.
-
-![Koding](https://koding.com/a/site.landing/images/slideshow/2x/ss-terminal.png "Koding")
-![Koding](https://koding.com/a/site.landing/images/slideshow/2x/ss-ide.png "Koding")
-
-## APIs used
-
-Provide a list of APIs you used in this project.
+Enjoy and Happy Koding!
