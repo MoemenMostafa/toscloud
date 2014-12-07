@@ -46,9 +46,10 @@ class Text extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'service_id' => 'Service ID',
-            'type_id' => 'Type ID',
-            'user_id' => 'User ID',
+            'service_id' => 'Service',
+            'type_id' => 'Type',
+            'user_id' => 'User',
+            'content' => 'Text',
             'timestamp' => 'Timestamp',
         ];
     }

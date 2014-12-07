@@ -3,6 +3,15 @@ body {
     height: 100%;
 }
 
+a {
+    color: #5CB85C;
+}
+
+a:hover, a:focus {
+    color: #5CB85C;
+    text-decoration: none;
+}
+
 .wrap {
     min-height: 100%;
     height: auto;

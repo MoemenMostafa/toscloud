@@ -36,9 +36,17 @@ class CreateController extends \yii\web\Controller
     public function actionIndex()
     {
     	$model = new Text();
+    	if($model->load(Yii::$app->request->post()))
+        {
+            print_r(Yii::$app->request->post());
+            #$model->save();
+            
+            #$this->redirect(['/']);
+        }
         return $this->render('index', [
                 'model' => $model,
             ]);
     }
+    
 
 }
