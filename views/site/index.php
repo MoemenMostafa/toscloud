@@ -13,7 +13,7 @@ $this->title = 'TOS CLOUD - Home';
         <p><a class="btn btn-lg btn-success" href="<?php echo Yii::$app->getUrlManager()->createUrl("site/about"); ?>">Learn More..</a></p>
     </div>
 
-    <div class="body-content">
+    <!--<div class="body-content">
 
         <div class="row">
             <div class="col-lg-4">
@@ -48,5 +48,5 @@ $this->title = 'TOS CLOUD - Home';
             </div>
         </div>
 
-    </div>
+    </div>-->
 </div>

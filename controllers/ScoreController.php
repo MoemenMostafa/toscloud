@@ -3,6 +3,7 @@
 namespace app\controllers;
 use yii\db\Query;
 use app\models\Score;
+use app\models\Comment;
 
 class ScoreController extends \yii\web\Controller
 {
@@ -88,6 +89,58 @@ class ScoreController extends \yii\web\Controller
  
  
     }
+    
+    public function actionGetComments()
+    {
+          $params=$_REQUEST;
+          $id=$params['id'];
+ 
+ 
+         $count = \app\models\Comment::find()->select(['*'])
+                                        ->where("part_id=$id")
+                                        ->count();
+        $comments = \app\models\Comment::find()->select(['comment.id','user.username','comment.content'])
+                                    ->join('LEFT JOIN',
+                                            'user',
+                                            'user.id =comment.user_id'
+                                            )
+                                    ->where("comment.part_id=$id")
+                                    ->asArray()
+                                    ->all();
+        
+        if($count){
+            $this->setHeader(200);
+            echo json_encode($comments);
+        }else{
+            $this->setHeader(200);
+            echo json_encode(array('status'=>0));
+        }
+ 
+    }
+    
+    
+    public function actionAddComment()
+    {
+         $params=$_REQUEST;
+        
+            $userId = $params['user_id']; 
+            $part_id = $params['part_id'];
+            $content = $params['content'];
+
+          $model = new Comment();
+          $model->attributes=$params;
+          
+          if ($model->save()) {
+              $this->setHeader(200);
+              echo json_encode(array('status'=>1,'data'=>array_filter($model->attributes)),JSON_PRETTY_PRINT);
+          } 
+          else
+          {
+              $this->setHeader(400);
+              echo json_encode(array('status'=>0,'error_code'=>400,'errors'=>$model->errors),JSON_PRETTY_PRINT);
+          }
+    }
+    
 
     public function actionIndex()
     {

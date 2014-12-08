@@ -24,7 +24,7 @@ class Text extends \yii\db\ActiveRecord
     
     
     public $content = null;
-    
+    public $service = null;
     /**
      * @inheritdoc
      */
@@ -44,6 +44,8 @@ class Text extends \yii\db\ActiveRecord
             [['service_id'], 'required'],
             [['type_id'], 'required'],
             [['content'], 'required'],
+            [['service'], 'required'],
+            [['service'], 'safe'],
         ];
     }
 

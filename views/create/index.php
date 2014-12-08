@@ -5,7 +5,7 @@ use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
 use app\models\Service;
 use app\models\Type;
-use kartik\widgets\Select2;
+use kartik\widgets\Typeahead;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Text */
@@ -19,8 +19,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?php $form = ActiveForm::begin(); ?>
     <div class="col-lg-4">
-        <?= $form->field($model, 'service_id')->widget(Select2::classname(), [
-            'data' =>  ArrayHelper::map(Service::find()->all(), 'id', 'name'),
+        <?= $form->field($model, 'service')->widget(Typeahead::classname(), [
+            'dataset' =>  [['local' => ArrayHelper::map(Service::find()->all(), 'id', 'name')]],
             'options' => ['placeholder' => 'Filter as you type ...'],
             'pluginOptions' => ['highlight'=>true],
         ]) ?>
