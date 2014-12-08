@@ -21,7 +21,12 @@ Here are some screens from the project progress and last two screens of the prod
 ## Frameworks and libraries used
 
 PHP 5.5.9
+
 MySQL 5.5 database
+
 Composer
+
 Yii2 framework
+
 JQuery
+
