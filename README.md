@@ -12,10 +12,24 @@ This project is created to enable people to rate and discuss web services legal 
 
 Here are some screens from the project progress and last two screens of the product it self.
 
+Wire Framing
+
 ![Koding](http://moemen.koding.io/1.png "Koding")
+
+Database Diagram
+
 ![Koding](http://moemen.koding.io/2.png "Koding")
+
+Logo Creation
+
 ![Koding](http://moemen.koding.io/3.png "Koding")
+
+Home Page
+
 ![Koding](http://moemen.koding.io/4.png "Koding")
+
+Legal document Page
+
 ![Koding](http://moemen.koding.io/5.png "Koding")
 
 ## Frameworks and libraries used
