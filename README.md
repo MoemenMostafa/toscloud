@@ -1,17 +1,27 @@
-# Welcome to your new Koding workspace
+# TOS Cloud
 
-This workspace, which lives inside the 'Workspaces' folder of your
-home directory, is the place where you can store all relevant and
-related files to this project.
+## Description
 
-Workspaces help keep your projects organized. You can create any
-number of sub-folders within this workspace in order to further
-organize your work.
+[![Koding Hackathon](https://github.com/koding/hackathon.submit/raw/master/images/badge.png?raw=true "Koding Hackathon")](https://koding.com/Hackathon)
 
-As you move back and forth between your workspaces, Koding will try
-and remember everything about each workspace. This includes things
-like IDE settings, files open, Terminals open, etc.
+TOS CLOUD is a small project created during Koding Hakathon to address the No body reads fine print theme.
 
-You can create as many new workspaces as you need on your VM.
+This project is created to enable people to rate and discuss web services legal documents like (Terms of service, Privacy Policy, etc..) in this way people will collaborate in reading and understanding long and boring legal terms and focous only on red flaged/ parts. 
 
-Enjoy and Happy Koding!
+## Screenshots
+
+Here are some screens from the project progress and last two screens of the product it self.
+
+![Koding](http://moemen.koding.io/1.png "Koding")
+![Koding](http://moemen.koding.io/2.png "Koding")
+![Koding](http://moemen.koding.io/3.png "Koding")
+![Koding](http://moemen.koding.io/4.png "Koding")
+![Koding](http://moemen.koding.io/5.png "Koding")
+
+## Frameworks and libraries used
+
+PHP 5.5.9
+MySQL 5.5 database
+Composer
+Yii2 framework
+JQuery
