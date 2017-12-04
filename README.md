@@ -32,7 +32,7 @@ Legal document Page
 
 ![Koding](http://moemen.koding.io/5.png "Koding")
 
-## Frameworks and libraries used
+## Frameworks and libraries used (prerequesits)
 
 PHP 5.5.9
 
@@ -44,3 +44,12 @@ Yii2 framework
 
 JQuery
 
+## Installation
+
+after cloning the repo run in the repo root
+
+```composer install```
+
+make sure that your php server and MySQL database are up and running then run
+
+```./yii migrate```
